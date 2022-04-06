@@ -1,0 +1,8 @@
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\bin\Debug\GestordeClientesCMD.exe.config
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\bin\Debug\GestordeClientesCMD.exe
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\bin\Debug\GestordeClientesCMD.pdb
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\obj\Debug\GestordeClientesCMD.csproj.AssemblyReference.cache
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\obj\Debug\GestordeClientesCMD.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\obj\Debug\GestordeClientesCMD.csproj.CoreCompileInputs.cache
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\obj\Debug\GestordeClientesCMD.exe
+C:\Users\Mateu\Documents\GitHub\GestordeClientesCMD\GestordeClientesCMD\GestordeClientesCMD\obj\Debug\GestordeClientesCMD.pdb
