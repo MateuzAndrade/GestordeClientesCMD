@@ -72,16 +72,27 @@ namespace GestordeClientesCMD
             Console.WriteLine("Lista de Clientes");
             Console.WriteLine("====================================\n");
 
-            int id = 0;
-            foreach (Cliente cliente in clientes)
+            if (clientes.Count > 0)
             {
-                Console.WriteLine($"Cliente ID: {id}");
-                Console.WriteLine($"Nome: {cliente.Nome}");
-                Console.WriteLine($"E-mail: {cliente.email}");
-                Console.WriteLine($"CPF: {cliente.cpf}\n");
-                id++;
+                int id = 0;
+                foreach (Cliente cliente in clientes)
+                {
+                    Console.WriteLine($"Cliente ID: {id}");
+                    Console.WriteLine($"Nome: {cliente.Nome}");
+                    Console.WriteLine($"E-mail: {cliente.email}");
+                    Console.WriteLine($"CPF: {cliente.cpf}\n");
+                    id++;
+                }
             }
-            Console.WriteLine("Aperte enter para sair.");
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Nenhum cliente cadastrado!\n");
+                Console.ForegroundColor = ConsoleColor.Blue;
+
+            };
+
+            Console.WriteLine("Pressione enter para continuar.");
             Console.ReadLine();
         }
 
@@ -107,7 +118,7 @@ namespace GestordeClientesCMD
 
         static void Salvar()
         {
-            FileStream stream = new FileStream("clients.dat", FileMode.OpenOrCreate);
+            FileStream stream = new FileStream("clients.txt", FileMode.OpenOrCreate);
             BinaryFormatter encoder = new BinaryFormatter();
 
             encoder.Serialize(stream, clientes);
@@ -145,19 +156,24 @@ namespace GestordeClientesCMD
         static void Remover()
         {
             Listagem();
-            Console.WriteLine("====================================");
+            Console.WriteLine("========================================");
             Console.WriteLine("Digite o ID do Cliente que você quer remover");
-            Console.WriteLine("====================================\n");
+            Console.WriteLine("========================================\n");
             int id = int.Parse(Console.ReadLine());
 
-            if (id > 0 && id < clientes.Count)
+            if (id >= 0 && id < clientes.Count)
             {
                 clientes.RemoveAt(id);
+                Console.WriteLine($"Você tem certeza que deseja deletar o Cliente de ID {id} ?");
+                Console.WriteLine("Pressione enter para continuar.");
+                Console.ReadLine();
                 Salvar();
+                Console.WriteLine($"Cliente {id} deletado com Sucesso.");
             }
             else
             {
-                Console.WriteLine("ID Digitado é invalido");
+                Console.WriteLine("ID do Cliente digitado não Existe.");
+                Console.WriteLine("Pressione enter para retornar ao inicio.");
                 Console.ReadLine();
             }
 
