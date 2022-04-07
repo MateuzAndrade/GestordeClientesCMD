@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace GestordeClientesCMD
 {
@@ -16,7 +18,7 @@ namespace GestordeClientesCMD
             public string cpf;
         }
 
-        static List<Cliente> Clientes = new List<Cliente>();
+        static List<Cliente> clientes = new List<Cliente>();
 
         enum Menu { Listagem = 1, Adicionar = 2, Remover = 3, Sair = 4 };
 
@@ -63,15 +65,21 @@ namespace GestordeClientesCMD
 
         static void Listagem()
         {
+            Console.WriteLine("====================================");
             Console.WriteLine("Lista de Clientes");
+            Console.WriteLine("====================================\n");
 
-            foreach (Cliente cliente in Clientes)
+            int i = 1;
+            foreach (Cliente cliente in clientes)
             {
+                Console.WriteLine($"Cliente ID: {i}");
                 Console.WriteLine($"Nome: {cliente.Nome}");
                 Console.WriteLine($"E-mail: {cliente.email}");
-                Console.WriteLine($"CPF: {cliente.cpf}");
-
+                Console.WriteLine($"CPF: {cliente.cpf}\n");
+                i++;
             }
+            Console.WriteLine("Aperte enter para sair.");
+            Console.ReadLine();
         }
 
         static void Adicionar()
@@ -87,10 +95,15 @@ namespace GestordeClientesCMD
             Console.WriteLine("CPF do Cliente: ");
             cliente.cpf = Console.ReadLine();
 
-            Clientes.Add(cliente);
+            clientes.Add(cliente);
 
             Console.WriteLine("Cadastro Concluído, Aperte enter para sair");
             Console.ReadLine();
+        }
+
+        static void Salvar()
+        {
+            FileStream stream = new FileStream()
         }
     }
 }
