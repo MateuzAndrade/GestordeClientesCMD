@@ -41,6 +41,7 @@ namespace GestordeClientesCMD
                 switch (opcao)
                 {
                     case Menu.Listagem:
+                        Listagem();
                         break;
                     case Menu.Adicionar:
                         Adicionar();
@@ -60,10 +61,25 @@ namespace GestordeClientesCMD
             }
         }
 
+        static void Listagem()
+        {
+            Console.WriteLine("Lista de Clientes");
+
+            foreach (Cliente cliente in Clientes)
+            {
+                Console.WriteLine($"Nome: {cliente.Nome}");
+                Console.WriteLine($"E-mail: {cliente.email}");
+                Console.WriteLine($"CPF: {cliente.cpf}");
+
+            }
+        }
+
         static void Adicionar()
         {
             Cliente cliente = new Cliente();
-            Console.WriteLine("Cadastro de Cliente: ");
+            Console.WriteLine("====================================");
+            Console.WriteLine("Cadastro de Cliente");
+            Console.WriteLine("====================================\n");
             Console.WriteLine("Nome do Cliente: ");
             cliente.Nome = Console.ReadLine();
             Console.WriteLine("Email do Cliente: ");
